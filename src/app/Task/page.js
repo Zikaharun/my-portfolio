@@ -1,7 +1,7 @@
 "use client"
 import { useState,useEffect } from "react";
 import Link from "next/link";
-const page = () => {
+const Page = () => {
     const [dailyNotes,setdailyNotes] = useState([]);
     const [title,setTitle] = useState('');
     const [content, setContent] = useState('');
@@ -82,9 +82,9 @@ const page = () => {
                 <ul>
                    {dailyNotes.map( dn => {
                     return (
-                        <div className="border-2 border-black rounded my-2 animate-slideUp p-2 shadow-[rgb(7,7,7)_3px_3px_3px]">
+                        <div key={dn.id} className="border-2 border-black rounded my-2 animate-slideUp p-2 shadow-[rgb(7,7,7)_3px_3px_3px]">
                         <p>{dn.date}</p>
-                        <li key={dn.id} className="text-center my-5">{dn.title}<br></br>{dn.visible && (dn.content)}
+                        <li className="text-center my-5">{dn.title}<br></br>{dn.visible && (dn.content)}
                        <button onClick={()=>{handleClick(dn.id)}} className="m-2 text-center bg-slate-200 hover:bg-slate-100 p-1 rounded-lg border-2 border-black ">{dn.visible? 'hide':'show '}</button>
                        <button onClick={()=>{deletedDailyNotes(dn.id)}} className="m-2 text-center m-2 text-center bg-slate-200 hover:bg-slate-100 p-1 rounded-lg border-2 border-black">deleted</button>
                        </li>
@@ -104,4 +104,4 @@ const page = () => {
     )
 }
 
-export default page;
+export default Page;

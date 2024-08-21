@@ -4,7 +4,7 @@ import React from "react";
 import { useState,useEffect } from "react";
 import Link from "next/link";
 
-const page = () => {
+const Page = () => {
     
         const [todos,setTodos] = useState([]);
         const [value,setValue] = useState('');
@@ -149,4 +149,4 @@ const page = () => {
     
 }
 
-export default page;
+export default Page;
