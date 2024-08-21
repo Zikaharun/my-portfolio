@@ -2,32 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+.custom-loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: 
+      radial-gradient(farthest-side,#0b0b0b 94%,#0000) top/8px 8px no-repeat,
+      conic-gradient(#0000 30%,#060606);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 1s infinite linear;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  /* CSS untuk animasi */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes slideRight {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Tambahkan class untuk animasi */
+.animate-slideDown {
+  animation: slideDown 0.5s ease-out;
+}
+
+.animate-slideRight {
+  animation: slideRight 0.5s ease-out;
+}
+.animate-slideLeft {
+  animation: slideLeft 0.5s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out;
+}
+
+
+
+  @keyframes s3{ 
+    100%{transform: rotate(1turn)}
+  }
