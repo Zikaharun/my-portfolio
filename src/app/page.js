@@ -10,7 +10,7 @@ export default function Home() {
       
       <div className="flex flex-col justify-center items-center min-h-screen">
         <div className="my-20">
-        <h1 className="text-center text-2xl font-bold my-3 animate-slideDown">ZikaApps.</h1>
+        <h1 className="text-center text-2xl font-bold my-3 animate-slideDown">SecondPapperApp.</h1>
         <p className="text-center text-medium my-1 animate-slideRight">All activites have been recorded here📔.</p>
         <p className="text-center text-large animate-slideLeft">Create your to do-list to be more productive by using this app.</p>
         </div>
